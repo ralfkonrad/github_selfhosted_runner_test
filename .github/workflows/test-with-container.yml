@@ -1,4 +1,4 @@
-name: test
+name: test-with-container
 
 on:
   workflow_dispatch: {}
@@ -6,11 +6,9 @@ on:
 jobs:
   test:
     runs-on: self-hosted
+    container:
+      image: maven:3-eclipse-temurin-21
+
     steps:
       - name: Checkout action
         uses: actions/checkout@v4
-
-      - uses: actions/setup-java@v4
-        with:
-          java-version: 21
-          distribution: "temurin"
