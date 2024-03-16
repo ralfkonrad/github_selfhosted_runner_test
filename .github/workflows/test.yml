@@ -1,0 +1,16 @@
+name: test
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout action
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'temurin'
