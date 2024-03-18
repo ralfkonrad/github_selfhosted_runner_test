@@ -14,7 +14,7 @@ echo "Run 'config.sh'"
 
 cleanup() {
     echo "Removing runner..."
-    ./config.sh remove --unattended --token ${GH_TOKEN}
+    ./config.sh remove --token ${GH_TOKEN}
 }
 
 trap 'cleanup; exit 130' INT
